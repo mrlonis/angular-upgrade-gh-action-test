@@ -68,6 +68,9 @@ jobs:
         run: |
           git checkout -b "$BRANCH_NAME"
           npm run ng -- update @angular/core@"$LATEST_MAJOR_VERSION" @angular/cli@"$LATEST_MAJOR_VERSION" @angular/material@"$LATEST_MAJOR_VERSION" @angular-eslint/schematics@"$LATEST_MAJOR_VERSION"
+          git config --global user.name "Matthew Lonis"
+          git config --global user.email "mattlonis@gmail.com"
+          git add .
           git commit -m "Upgrade $DEPENDENCY_NAME from $CURRENT_VERSION to $LATEST_VERSION"
           git push -u origin "$BRANCH_NAME"
       - uses: tibdex/github-app-token@v2
