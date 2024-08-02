@@ -84,4 +84,4 @@ jobs:
           GH_TOKEN: ${{ steps.generate-token.outputs.token }}
         run: |
           default_branch=$(gh repo view --json defaultBranchRef -q ".defaultBranchRef.name")
-          gh pr create --base $default_branch --head ${{ github.head_ref }} --title "Pull request title" --body "Pull request description"
+          gh pr create --base "$default_branch" --title "Pull request title" --body "Pull request description"
