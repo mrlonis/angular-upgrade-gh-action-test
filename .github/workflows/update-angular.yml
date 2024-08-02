@@ -79,7 +79,7 @@ jobs:
           app_id: ${{ secrets.APP_ID }}
           private_key: ${{ secrets.APP_PRIVATE_KEY }}
       - name: Create Pull Request
-        if: steps.perform-upgrade.status == 'success'
+        if: steps.perform-upgrade.conclusion == 'success'
         env:
           GH_TOKEN: ${{ steps.generate-token.outputs.token }}
         run: |
