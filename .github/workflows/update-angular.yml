@@ -5,10 +5,10 @@ on:
   workflow_dispatch:
 env:
   DEPENDENCY_NAME: '@angular/core'
+permissions: write-all
 jobs:
   update-angular-major-version:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
