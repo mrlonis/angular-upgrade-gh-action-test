@@ -50,7 +50,7 @@ jobs:
           LATEST_VERSION: ${{ steps.check-version.outputs.LATEST_VERSION }}
         run: |
           git fetch --all
-          if git show-ref --verify --quiet refs/remotes/origin/"$BRANCH_NAME"; then
+          if git ls-remote --exit-code --heads origin "$BRANCH_NAME"; then
             echo "Branch '$BRANCH_NAME' already exists."
             echo "BRANCH_EXISTS=true" >> "$GITHUB_OUTPUT"
           else
