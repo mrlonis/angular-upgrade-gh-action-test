@@ -19,6 +19,17 @@
     "test:cypress:open": "start-server-and-test start http://localhost:4200 cypress:open",
     "watch": "ng build --watch --configuration development"
   },
+  "lint-staged": {
+    "*.{css,html,js,jsx,json,md,ts,tsx,scss}": [
+      "prettier --write"
+    ],
+    "cypress/**/*.{html,js,jsx,ts,tsx}": [
+      "ng-lint-staged lint --fix --"
+    ],
+    "src/**/*.{html,js,jsx,ts,tsx}": [
+      "ng-lint-staged lint --fix --"
+    ]
+  },
   "dependencies": {
     "@angular/animations": "^18.2.12",
     "@angular/cdk": "^18.2.13",
@@ -30,42 +41,45 @@
     "@angular/platform-browser": "^18.2.12",
     "@angular/platform-browser-dynamic": "^18.2.12",
     "@angular/router": "^18.2.12",
-    "rxjs": "~7.8.0",
+    "rxjs": "^7.8.0",
     "tslib": "^2.8.1",
     "zone.js": "~0.14.10"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^18.2.12",
-    "@angular-eslint/builder": "18.4.0",
-    "@angular-eslint/eslint-plugin": "18.4.0",
-    "@angular-eslint/eslint-plugin-template": "18.4.0",
-    "@angular-eslint/schematics": "18.4.0",
-    "@angular-eslint/template-parser": "18.4.0",
     "@angular/cli": "^18.2.12",
     "@angular/compiler-cli": "^18.2.12",
-    "@types/jasmine": "~5.1.0",
-    "@typescript-eslint/eslint-plugin": "7.18.0",
-    "@typescript-eslint/parser": "7.18.0",
+    "@types/jasmine": "^5",
+    "@types/node": "^22",
+    "angular-eslint": "^18.4.1",
     "cypress": "^13.15.2",
-    "eslint": "^8.57.1",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-cypress": "^3.6.0",
-    "eslint-plugin-prettier": "^5.2.1",
-    "husky": "^9.1.7",
-    "jasmine-core": "~5.4.0",
-    "karma": "~6.4.0",
-    "karma-chrome-launcher": "~3.2.0",
-    "karma-coverage": "~2.2.0",
-    "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.1.0",
-    "lint-staged": "^15.2.10",
-    "ng-lint-staged": "^12.0.4",
-    "prettier": "^3.3.3",
-    "start-server-and-test": "^2.0.8",
-    "typescript": "~5.4.2"
+    "eslint": "^9",
+    "eslint-config-prettier": "^9",
+    "eslint-import-resolver-typescript": "^3",
+    "eslint-plugin-cypress": "^4",
+    "eslint-plugin-depend": "~0.12.0",
+    "eslint-plugin-import": "^2",
+    "eslint-plugin-jasmine": "^4.2.2",
+    "eslint-plugin-prettier": "^5",
+    "husky": "^9",
+    "jasmine-core": "^5",
+    "karma": "^6",
+    "karma-chrome-launcher": "^3",
+    "karma-coverage": "^2",
+    "karma-edge-launcher": "~0.4",
+    "karma-firefox-launcher": "^2",
+    "karma-jasmine": "^5",
+    "karma-jasmine-html-reporter": "^2",
+    "karma-junit-reporter": "^2",
+    "lint-staged": "^15",
+    "ng-lint-staged": "^12",
+    "prettier": "^3",
+    "start-server-and-test": "^2",
+    "typescript": "~5.5",
+    "typescript-eslint": "^8.12.2"
   },
   "engines": {
-    "node": "^20",
+    "node": "^22",
     "npm": "^10"
   }
 }
