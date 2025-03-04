@@ -17,22 +17,6 @@ updates:
       - dependency-type: 'all'
     open-pull-requests-limit: 99
     groups:
-      angular-version-updates:
-        applies-to: version-updates
-        patterns:
-          - '@angular*'
-          - 'ngx*'
-        update-types:
-          - 'minor'
-          - 'patch'
-      angular-security-updates:
-        applies-to: security-updates
-        patterns:
-          - '@angular*'
-          - 'ngx*'
-        update-types:
-          - 'patch'
-          - 'minor'
       production-version-updates:
         applies-to: version-updates
         dependency-type: production
@@ -54,6 +38,24 @@ updates:
       development-security-updates:
         applies-to: security-updates
         dependency-type: development
+        update-types:
+          - 'patch'
+          - 'minor'
+      angular-version-updates:
+        applies-to: version-updates
+        patterns:
+          - '@angular*'
+          - 'angular-eslint'
+          - 'ngx*'
+        update-types:
+          - 'minor'
+          - 'patch'
+      angular-security-updates:
+        applies-to: security-updates
+        patterns:
+          - '@angular*'
+          - 'angular-eslint'
+          - 'ngx*'
         update-types:
           - 'patch'
           - 'minor'
