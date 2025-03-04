@@ -17,6 +17,26 @@ updates:
       - dependency-type: 'all'
     open-pull-requests-limit: 99
     groups:
+      angular-version-updates:
+        applies-to: version-updates
+        patterns:
+          - '@angular*'
+          - '@angular-devkit/build-angular'
+          - 'angular-eslint'
+          - 'ngx*'
+        update-types:
+          - 'minor'
+          - 'patch'
+      angular-security-updates:
+        applies-to: security-updates
+        patterns:
+          - '@angular*'
+          - '@angular-devkit/build-angular'
+          - 'angular-eslint'
+          - 'ngx*'
+        update-types:
+          - 'patch'
+          - 'minor'
       production-version-updates:
         applies-to: version-updates
         dependency-type: production
@@ -41,26 +61,10 @@ updates:
         update-types:
           - 'patch'
           - 'minor'
-      angular-version-updates:
-        applies-to: version-updates
-        patterns:
-          - '@angular*'
-          - 'angular-eslint'
-          - 'ngx*'
-        update-types:
-          - 'minor'
-          - 'patch'
-      angular-security-updates:
-        applies-to: security-updates
-        patterns:
-          - '@angular*'
-          - 'angular-eslint'
-          - 'ngx*'
-        update-types:
-          - 'patch'
-          - 'minor'
     ignore:
       - dependency-name: '@angular*'
+        update-types: ['version-update:semver-major']
+      - dependency-name: '@angular-devkit/build-angular'
         update-types: ['version-update:semver-major']
       - dependency-name: '@types/iframe-resizer'
         update-types: ['version-update:semver-major']
