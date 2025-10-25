@@ -38,7 +38,7 @@ module.exports = tseslint.config(
     languageOptions: {
       parserOptions: {
         project: true,
-        tsconfigRootDir: '.',
+        tsconfigRootDir: __dirname,
       },
       globals: {
         ...globals.jasmine,
@@ -125,7 +125,7 @@ module.exports = tseslint.config(
     languageOptions: {
       parserOptions: {
         project: true,
-        tsconfigRootDir: '.',
+        tsconfigRootDir: __dirname,
       },
     },
     processor: angular.processInlineTemplates,
