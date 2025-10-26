@@ -31,14 +31,14 @@ module.exports = tseslint.config(
       'import/resolver': {
         typescript: {
           alwaysTryTypes: true,
-          project: ['tsconfig.app.json', 'tsconfig.spec.json', 'tsconfig.json', 'cypress/tsconfig.json'],
+          project: ['tsconfig.spec.json', 'tsconfig.json'],
         },
       },
     },
     languageOptions: {
       parserOptions: {
         project: true,
-        tsconfigRootDir: '.',
+        tsconfigRootDir: __dirname,
       },
       globals: {
         ...globals.jasmine,
@@ -118,14 +118,14 @@ module.exports = tseslint.config(
       'import/resolver': {
         typescript: {
           alwaysTryTypes: true,
-          project: ['tsconfig.app.json', 'tsconfig.spec.json', 'tsconfig.json', 'cypress/tsconfig.json'],
+          project: ['tsconfig.app.json', 'tsconfig.json', 'cypress/tsconfig.json'],
         },
       },
     },
     languageOptions: {
       parserOptions: {
         project: true,
-        tsconfigRootDir: '.',
+        tsconfigRootDir: __dirname,
       },
     },
     processor: angular.processInlineTemplates,
