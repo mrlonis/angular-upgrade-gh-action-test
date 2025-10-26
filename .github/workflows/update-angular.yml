@@ -6,6 +6,9 @@ on:
 env:
   DEPENDENCY_NAME: 'angular-eslint'
 permissions: write-all
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   update-angular-major-version:
     runs-on: ubuntu-latest

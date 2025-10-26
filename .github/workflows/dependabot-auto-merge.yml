@@ -1,10 +1,11 @@
 name: Dependabot auto-merge
 on: pull_request
-
 permissions:
   contents: write
   pull-requests: write
-
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   dependabot-auto-merge:
     runs-on: ubuntu-latest
