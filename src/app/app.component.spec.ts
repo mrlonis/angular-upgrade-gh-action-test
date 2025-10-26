@@ -8,6 +8,7 @@ describe('AppComponent', () => {
     }).compileComponents();
   });
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
@@ -15,6 +16,7 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   it(`should have the 'angular-upgrade-gh-action-test' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
@@ -22,6 +24,7 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('angular-upgrade-gh-action-test');
   });
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
